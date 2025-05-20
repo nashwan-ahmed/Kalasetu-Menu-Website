@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enjoy Your Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 40px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .menu-section {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f0f8ff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #2980b9;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    li a {
+      color: #333;
+      text-decoration: none;
+    }
+    li a:hover {
+      text-decoration: underline;
+      color: #2980b9;
+    }
+    #recipe-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff8dc;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ENJOY YOUR MENU</h1>
+
+  <div class="menu-section">
+    <h2>Ladakh Cuisine</h2>
+    <ul>
+      <li><a href="#" onclick="showRecipe('kahwa')">Kahwa Tea</a></li>
+      <li><a href="#" onclick="showRecipe('thukpa')">Thukpa</a></li>
+    </ul>
+  </div>
+
+  <div class="menu-section">
+    <h2>Karnataka Cuisine</h2>
+    <ul>
+      <li><a href="#" onclick="showRecipe('chutney')">Coconut Chutney</a></li>
+      <li><a href="#" onclick="showRecipe('neer')">Neer Dosa</a></li>
+      <li><a href="#" onclick="showRecipe('kokum')">Kokum Juice</a></li>
+      <li><a href="#" onclick="showRecipe('tender')">Tender Coconut Juice</a></li>
+    </ul>
+  </div>
+
+  <div id="recipe-box"></div>
+
+  <script>
+    function showRecipe(dish) {
+      const recipes = {
+        kahwa: "<h3>Kahwa Tea</h3><p>Boil water with saffron, cinnamon, and cardamom. Add green tea leaves and crushed almonds. Steep and serve hot.</p>",
+        thukpa: "<h3>Thukpa</h3><p>Prepare a broth with vegetables and spices, add cooked noodles, and simmer. Serve hot with chili sauce.</p>",
+        chutney: "<h3>Coconut Chutney</h3><p>Grind coconut, green chili, and roasted chana dal. Temper with mustard seeds and curry leaves.</p>",
+        neer: "<h3>Neer Dosa</h3><p>Soak rice, grind to a smooth batter, and make thin crepes on a hot pan. Serve with chutney.</p>",
+        kokum: "<h3>Kokum Juice</h3><p>Soak kokum in water, strain, add sugar and cumin powder. Serve chilled.</p>",
+        tender: "<h3>Tender Coconut Juice</h3><p>Serve fresh coconut water directly from the fruit, optionally chill before serving.</p>"
+      };
+
+      const box = document.getElementById('recipe-box');
+      box.innerHTML = recipes[dish] || "<p>Recipe not found.</p>";
+      box.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
